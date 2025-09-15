@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Farid Hossain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f4f6f9; color:#333; line-height:1.6; }
+
+    /* Header */
+    header {
+      position: relative;
+      height: 60vh;
+      background: url('images/header-bg.jpg') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    header .overlay {
+      position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);
+    }
+    header .header-content { position: relative; z-index: 1; opacity:0; transform:translateY(-20px); animation: fadeIn 1.5s forwards; }
+    header h1 { font-size:3rem; margin-bottom:10px; }
+    header p { font-size:1.3rem; margin-bottom:10px; }
+    header .social-icons a { color:#fff; margin:0 10px; font-size:1.5rem; transition:0.3s; }
+    header .social-icons a:hover { color:#ff9900; }
+
+    /* Navigation */
+    nav { background:#334155; text-align:center; padding:15px 0; }
+    nav a { color:#fff; text-decoration:none; margin:0 20px; font-weight:bold; transition:0.3s; }
+    nav a:hover { text-decoration:underline; }
+
+    /* Sections */
+    section { padding:60px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(20px); transition: all 0.8s ease; }
+    section.visible { opacity:1; transform:translateY(0); }
+    section h2 { font-size:2rem; color:#1e293b; margin-bottom:20px; }
+    section p { margin-bottom:20px; }
+
+    /* Skills */
+    .skill { margin-bottom:20px; }
+    .skill-bar { background:#ddd; border-radius:5px; overflow:hidden; }
+    .skill-fill { height:20px; width:0; background:#334155; border-radius:5px; transition:width 1.5s; }
+
+    /* Portfolio */
+    .portfolio { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 6px rgba(0,0,0,0.1); cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow:0 10px 15px rgba(0,0,0,0.2); }
+
+    /* Modal */
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+    .modal-content { background:#fff; padding:20px; border-radius:10px; max-width:600px; width:90%; position:relative; }
+    .modal-content h3 { margin-bottom:10px; }
+    .modal-content p { margin-bottom:15px; }
+    .close-btn { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:#333; }
+
+    /* Contact Form */
+    form input, form textarea { width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc; }
+    form button { padding:12px 25px; background:#334155; color:#fff; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+    form button:hover { background:#1e293b; }
+
+    /* Footer */
+    footer { background:#1e293b; color:#fff; text-align:center; padding:20px; }
+
+    /* Animations */
+    @keyframes fadeIn { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+
+    /* Responsive */
+    @media (max-width:600px) {
+      header h1 { font-size:2rem; }
+      header p { font-size:1rem; }
+      section h2 { font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Md Farid Hossain</h1>
+      <p>Personal Website | IT Solutions | Portfolio</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am <b>Md Farid Hossain</b>. Welcome to my official website. I am passionate about technology, web development, and providing IT solutions. This website will showcase my skills, projects, and services.</p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill">
+      <p>HTML & CSS</p>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <p>JavaScript</p>
+      <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+      <p>Python</p>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+      <div class="card" data-title="Project 1" data-desc="This is the detailed description of Project 1."> 
+        <h3>Project 1</h3>
+        <p>Click to view details</p>
+      </div>
+      <div class="card" data-title="Project 2" data-desc="This is the detailed description of Project 2."> 
+        <h3>Project 2</h3>
+        <p>Click to view details</p>
+      </div>
+      <div class="card" data-title="Project 3" data-desc="This is the detailed description of Project 3."> 
+        <h3>Project 3</h3>
+        <p>Click to view details</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>Phone: +8801XXXXXXXXX</p>
+
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Md Farid Hossain | All Rights Reserved</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Scroll animation
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-fill');
+    const skillObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.width = entry.target.style.width;
+        }
+      });
+    }, { threshold: 0.5 });
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Portfolio modal
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        modalTitle.textContent = card.dataset.title;
+        modalDesc.textContent = card.dataset.desc;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => modal.style.display='none');
+    window.addEventListener('click', e => { if(e.target==modal) modal.style.display='none'; });
+  </script>
+
+</body>
+</html>
